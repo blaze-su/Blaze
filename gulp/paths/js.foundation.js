@@ -1,3 +1,5 @@
 'use strict';
 
-module.exports = [];
+module.exports = [
+   './bower_components/Snap.svg/dist/snap.svg-min.js'
+];

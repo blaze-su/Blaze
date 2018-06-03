@@ -1,0 +1,28 @@
+.clients
+   background-color: $white
+   &__list
+      background-color: $main-bg-grey
+      display: flex
+      flex-wrap: wrap
+      overflow: hidden
+      position: relative
+      top: 1px
+      right: 1px
+      margin: 0 auto
+      @media all and (max-width: 1280px)
+         max-width: calc(256px*4)
+   &__item
+      width: 256px
+      height: 256px
+      position: relative
+      border-right: 1px solid #e5e5e5
+      border-top: 1px solid #e5e5e5
+      right: -1px
+      top: -1px
+      &:hover
+         & > *:first-child
+            z-index: 10
+      &-image
+         position: absolute
+         width: 100%
+         height: 100%

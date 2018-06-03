@@ -1,0 +1,19 @@
+.menu
+   display: flex
+   color: #f0f0f0
+   &.-header
+      @include w1366
+         display: none
+   &.-footer
+   &__item
+      white-space: nowrap
+      margin-right: 4.01vw
+      opacity: .8
+      @include w1600
+         margin-right: 3vw
+      &:last-child
+         margin-right: 0
+      &:hover
+         color: $white
+         opacity: 1
+

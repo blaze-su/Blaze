@@ -1,1 +1,28 @@
 .footer
+   background-color: $title-grey
+   padding: 72px 40px 55px
+   color: $footer-text
+   & .logo-link
+      transform: translateY(-25%)
+   &-content
+      &__main
+         display: flex
+         justify-content: space-between
+         &-inner
+            max-width: 81.25vw
+            width: 100%
+            display: flex
+            justify-content: space-between
+      &__bottom
+         display: flex
+         justify-content: space-between
+         color: #5a5f66
+         margin-top: 70px
+         & > a[data-use='agreement']
+            &:hover
+               color: $footer-text
+   &-contacts
+      &__top
+         display: flex
+         justify-content: space-between
+         margin-bottom: 17px

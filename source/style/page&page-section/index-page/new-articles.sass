@@ -1,0 +1,33 @@
+.new-articles
+	&__list
+		display: flex
+	&__item
+		max-width: 420px
+		width: 100%
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+		&-content
+			padding: 0 10px
+		&-link
+			width: 100%
+			height: 315px
+			margin-bottom: 30px
+			display: block
+		&-image
+			height: 100%
+		&-title
+			font-size: 22px
+			line-height: 1.36
+			color: $title-grey
+			margin-bottom: 10px
+			display: block
+			&:hover
+				text-decoration: underline
+		&-author
+			color: #1d2129
+			line-height: 1.56
+			font-size: 18px
+	& > .container > .direct-link__wrap
+		left: 50%
+		transform: translateX(-50%)
