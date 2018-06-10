@@ -4,24 +4,38 @@
       flex-wrap: wrap
       margin: -10px -5px 0
       margin-bottom: 100px
+      @include w1024-
+         max-width: 100%
+         margin: -10px auto 100px
+         padding: 0 5px
       &__item
          display: flex
          flex-direction: column
          justify-content: space-between
          background-color: $title-grey
          padding: 60px 40px 54px 60px
-         width: 420px
+         min-width: 334.5px
+         max-width: 420px
+         flex: 1
          height: 420px
          position: relative
          margin: 10px 5px 0
          @include w1366
             padding: 50px 5px 50px 50px
-            width: auto
+         @include w1200-
+            justify-content: flex-start
+            min-height: 420px
             height: auto
-            flex: 1
-            min-width: 30%
+            max-width: none
+         @include w768-
+            min-height: auto
+            padding: 20px 5px 50px 20px
+         @include w540-
+            min-width: auto
          &:hover
             background-image: url('../img/service-bg.png')
+            background-repeat: no-repeat
+            background-size: cover
             & > .services-list__item-icon
                fill: $white
             & .services-list__item-desc
@@ -31,19 +45,19 @@
          &-info
             max-height: 200px
             overflow: hidden
-            @include w1366
-               min-height: 200px
+            @media all and (max-width: 1279px)
                max-height: none
-               display: flex
-               flex-direction: column
-               justify-content: flex-end
          &-icon
             max-width: 90px
             max-height: 90px
+            min-height: 90px
             width: auto
-            height: auto
             fill: $svg-blue
             margin-bottom: 15px
+            @include w1200-
+               margin-bottom: 60px
+            @include w540-
+               margin-bottom: 40px
          &-name
             font-size: 1.2rem
             color: $white
@@ -67,6 +81,9 @@
       display: flex
       align-items: flex-end
       overflow: hidden
+      @include w540-
+         height: 93.75vw
+         padding: 6.25vw
       &:not(:active):hover
          & > .btn-sector
             background: url('../img/sprite.png') -10px -151px

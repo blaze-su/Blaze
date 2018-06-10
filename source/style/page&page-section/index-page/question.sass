@@ -9,11 +9,13 @@
       color: $our-work-grey
       text-align: center
       margin-bottom: 40px
+      @include w540-
+         font-size: 27px
    &-form
       display: flex
+      flex-wrap: wrap
       justify-content: center
+      margin-top: -10px
       & > *
-         margin: 0 5px
+         margin: 10px 5px 0
       &__input
-         padding: 0 24px
-         font-size: 1rem

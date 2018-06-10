@@ -10,23 +10,36 @@
 
 h1
 	font-family: 'RobotoBold'
+	line-height: 1.2
 	@include w1366
 		font-size: 44px
+	@include w768-
+		font-size: 40px
 	&.-lg
 		font-size: 60px
 h2
 	font-size: 50px
+	line-height: 1.2
 	font-family: 'RobotoBold'
+	@include w540-
+		font-size: 36px
 	&.title
 		&.-bg
+			display: inline-block
+			width: 100%
 			margin: 90px auto 50px
 			text-transform: uppercase
 			text-align: center
 			color: $title-grey
+			@include w540-
+				margin: 50px auto 30px
 h3
 	font-size: 40px
+	line-height: 1.2
 	@include w1366
 		font-size: 36px
+	@include w768-
+		font-size: 32px
 	&.-md
 
 
@@ -35,7 +48,6 @@ html
 	min-width: 320px
 	width: 100%
 	height: auto
-
 
 body
 	position: relative
@@ -68,6 +80,8 @@ body
 .main
 	& > div
 		padding-bottom: 100px
+		@include w540-
+			padding-bottom: 60px
 
 .contacts
 	&-city
@@ -87,7 +101,6 @@ body
 		background-color: transparent
 		background-repeat: no-repeat
 		position: relative
-		// background-image: url('../img/button/button_idle.svg')
 		&:after
 			content: ''
 			position: absolute
@@ -105,7 +118,6 @@ body
 			left: -25px
 			top: -25px
 			padding-left: 45px
-			// background-image: url('../img/button/button_hover.svg')
 			&:after
 				right: 54px
 		&__wrap
@@ -174,6 +186,8 @@ form
 		height: 60px
 		border: 1px solid $input-border
 		color: $input-border
+		padding: 0 24px
+		font-size: 1rem
 		&:focus
 			border-color: $input-border-focus
 			color: $input-border-focus

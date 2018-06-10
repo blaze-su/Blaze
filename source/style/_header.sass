@@ -1,7 +1,9 @@
 .header
 	color: $header-grey
-	@include w1366
-		padding: 32px 35px 0 0
+	@include w1366-
+      padding: 32px 35px 0
+	@include w540-
+		padding: 4.6875vw 4.6875vw 0
 	& > .container
 		display: flex
 		justify-content: space-between
@@ -17,11 +19,14 @@
 			max-width: 600px
 		@include w1366
 			max-width: none
+			padding-left: 0
 	&-contacts
 		display: flex
 		@include w1366
 			width: 100%
 			justify-content: center
+		@include w768-
+			display: none
 		&__select
 			color: #878f99
 			margin-right: 50px
@@ -55,9 +60,6 @@
 				overflow: hidden
 				height: 0
 				&.-active
-					// -webkit-transition: height 2s ease
-					// -moz-transition: height 2s ease
-					// transition: height 2s ease
 					height: auto
 			&-item
 				cursor: pointer
@@ -78,10 +80,7 @@
 		background-size: 18px 20px
 		background-repeat: no-repeat
 		background-position: center
-		margin-left: 4.01vw
-		@include w1600
-			margin-left: 3vw
-		@include w1366
+		@include w1366-
 			display: none
 		&:after
 			content: ''
