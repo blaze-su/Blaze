@@ -13,6 +13,8 @@
    &.-open
       display: flex
       transform: translate(-50%, -50%)
+      & > .modal__side-front
+         // transform: scale(1)
    &.-sent
       & > .modal__side-front
          transform: rotateY(-180deg)
@@ -28,22 +30,22 @@
       height: 101vh
       transform: translate(-50%, -50%)
       background:
-         // color: rgb(25,29,36)
-         color: rgba(25,29,36,.95)
+         color: rgb(25,29,36)
+         image: url('../img/first-screen-bg/bg_filter_desktop_2x.jpg')
          size: cover
          repeat: no-repeat
          position: center
       @include w1366
-         // background-image: url('../img/tablet/tablet_1x.jpg')
+         background-image: url('../img/first-screen-bg/bg_filter_desktop_1x.jpg')
       @include w768
-         background-image: url('../img/tablet/tablet_1x.jpg')
+         background-image: url('../img/first-screen-bg/bg_filter_tablet.jpg')
       @include w320
          background:
             image: none
-            color: rgba(25,29,36,1)
    &__side
       &-front
          transition: all 1s ease
+         // transform: scale(0)
          backface-visibility: hidden
          max-width: 340px
          width: 100%
@@ -74,12 +76,15 @@
       &-back
          transition: all 1s ease
          backface-visibility: hidden
-         max-width: 570px
+         max-width: 590px
+         padding: 0 10px
          position: absolute
          top: 50%
          width: max-content
          left: 50%
          transform: translate(-50%, -50%) rotateY(180deg)
+         @media all and (max-width: 590px)
+            max-width: 100%
          & > h1
             color: #56ccf2
             text-align: center
