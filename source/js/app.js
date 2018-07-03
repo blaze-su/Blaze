@@ -93,32 +93,39 @@ var swiper = () => {
    //    slidesPerView: 'auto'
    // });
 
+   // let clientsSliderInit = false;
+
    // var clientsSlider = new Swiper('.clients__list-wrap', {
    //    init: false,
    //    slideClass: "clients__item",
    //    wrapperClass: "clients__list",
    //    slidesPerView: 'auto',
    //    slidesPerColumn: 2,
-   //    on: {
-   //       init: function () {
-   //          window.addEventListener('resize', () => {
-   //             if ($.body.offsetWidth < 768) clientsSlider.init();
-   //             else {
-   //                clientsSlider.destroy(false, true);
-   //                // if ($.querySelector('.clients__list').style.width != '')
-   //             }
-   //          });
-   //       },
-   //    },
    //    breakpoints: {
    //       511: {
    //          slidesPerColumn: 1
+   //       }
+   //    },
+   //    on: {
+   //       init: () => {
+   //          clientsSliderInit = true;
+   //       },
+   //       destroy: () => {
+   //          clientsSliderInit = false;
    //       }
    //    }
    // });
 
    // if ($.querySelector('.clients__list-wrap')) {
    //    if ($.body.offsetWidth < 768) clientsSlider.init();
+
+   //    window.addEventListener('resize', () => {
+   //       if ($.body.offsetWidth < 768)
+   //          if (clientsSliderInit !== true) clientsSlider.init();
+   //       else {
+   //          clientsSlider.destroy();
+   //       }
+   //    });
    // }
 
    // if ($.querySelector('.new-articles__list-wrap')) {
