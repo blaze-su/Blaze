@@ -2,25 +2,45 @@ extends ../_template
 
 block content
 	div.text-svg
-		svg#svg
-		script.
-			window.addEventListener('load', () => {
-				document.onclick = () => {
-					var s = Snap('#svg');
-					var bigCircle = s.circle(550, 550, 25);
-					bigCircle.attr({
-						fill: "transparent",
-						stroke: 'transparent',
-						strokeWidth: 150
-					});
-					var smallCircle = s.circle(550, 550, 0);
-					smallCircle.attr({
-						fill: "#fff"
-					});
-					var discs = s.group(smallCircle, bigCircle);
-					smallCircle.animate({r: 100}, 500, () => {
-						bigCircle.attr({stroke: '#fff'});
-						bigCircle.animate({r: 400}, 1500);
-					});
-				}
-			});	
+		.loader
+			.circle
+			.circle
+			.circle
+		//- svg#svg
+		//- script.
+			//- window.addEventListener('load', () => {
+			//- 	var s = Snap('#svg');
+			//- 	var circle_1 = s.circle(550, 550, 0);
+			//- 	circle_1.attr({
+			//- 		fill: "#fff",
+			//- 	});
+			//- 	var circle_2 = s.circle(550, 550, 0);
+			//- 	circle_2.attr({
+			//- 		//- fill: "#f5f5f5",
+			//- 		fill: "red",
+			//- 	});
+			//- 	var circle_3 = s.circle(550, 550, 0);
+			//- 	circle_3.attr({
+			//- 		fill: "#fff",
+			//- 	});
+			//- 	var circle_4 = s.circle(550, 550, 0);
+			//- 	circle_4.attr({
+			//- 		fill: "#2f80ed",
+			//- 	});
+			//- 	var discs = s.group(circle_1, circle_2, circle_3, circle_4);
+
+			//- 	var time = 900
+
+			//- 	document.onclick = () => {
+			//- 		circle_1.animate({r: 450}, time * 1, mina.easeinout);
+			//- 		setTimeout(() => {
+			//- 			circle_2.animate({r: 325}, time * 2, mina.easeinout);
+			//- 			//- setTimeout(() => {
+			//- 			//- 	circle_3.animate({r: 125}, time * 3, mina.easeinout);
+			//- 			//- 	setTimeout(() => {
+			//- 			//- 		circle_4.animate({r: 50}, time * 4, mina.easeinout);
+			//- 			//- 	}, 450/3*time*3)
+			//- 			//- }, 450/3*time*2)
+			//- 		}, 450/3*time)
+			//- 	}
+			//- });	
