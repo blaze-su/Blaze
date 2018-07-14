@@ -73,6 +73,9 @@ body
 	&.-big
 		max-width: 1920px
 
+.-bg-w
+	background-color: $white
+
 .logo
 	&-link
 		display: flex
@@ -136,6 +139,21 @@ body
 			height: 96px
 		&:active
 			background: url('../img/sprite.png') -156px -10px !important
+
+.dark-substrate
+	position: relative
+	z-index: 1
+	&:before
+		content: ''
+		display: block
+		background-color: rgba($title-grey, .9)
+		height: 100%
+		width: 100vw
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+		z-index: -1
 
 .direct-link
 	border: 1px solid rgba($title-grey, .3)

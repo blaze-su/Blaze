@@ -1,7 +1,13 @@
 .question
    display: flex
+   overflow: hidden
+   padding-bottom: 0 !important
    background-color: rgba($title-grey, .9)
-   & > .container > h2
+   & > .container
+      position: relative
+   &__wrap
+      padding: 90px 0 100px
+   & h2.title.-bg
       color: #56ccf2 !important
       margin-bottom: 15px !important
    &__sub-title
