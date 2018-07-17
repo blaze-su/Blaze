@@ -1,16 +1,81 @@
 .first-screen
-   background-color: $title-grey
-   background-image: url('../img/first-screen-bg/1st_bg_image_2x.jpg')
    background-repeat: no-repeat
-   background-size: cover
-   background-position: center
    min-height: 100vh
    max-height: 1080px
-   @include w1366
-      background-image: url('../img/first-screen-bg/1st_bg_image_1x.jpg')
-   @include w540
-      background-image: url('../img/first-screen-bg/1st_bg_image_sm.jpg')
-      background-position-x: 47%
+   position: relative
+   overflow: hidden
+   // &__bg
+   //    position: absolute
+   //    top: 50%
+   //    left: 0
+   //    transform: translateY(-50%)
+   //    z-index: -1
+   //    min-width: 100%
+   //    min-height: 100%
+   //    height: auto
+   //    width: 1920px
+   &.-index
+      background:
+         color: $title-grey
+         image: url('../img/first-screen-bg/1st_bg_image_2x.jpg')
+         size: cover
+         position: center
+      @include w1366
+         background-image: url('../img/first-screen-bg/1st_bg_image_1x.jpg')
+      @include w540
+         background:
+            image: url('../img/first-screen-bg/1st_bg_image_sm.jpg')
+            position-x: 47%
+   &.-smm
+      background:
+         color: $title-grey
+         image: url('../img/first-screen-bg/smm/1st-screen_1.jpg')
+         size: cover
+         position: center
+   &.-dark
+      & .menu
+         &__item
+            opacity: .8
+      & .first-screen__content
+         & > h1
+            color: #56ccf2
+         & > h3
+            color: $our-work-grey
+      & .header-contacts__select
+         color: $footer-text
+         &-check
+            color: $footer-text
+            &:after
+               background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KICA8Zz4KICAgIDxnPgogICAgICA8cGF0aCBkPSJNNjQuNSwxMjIuNmMzMiwwLDU4LjEtMjYsNTguMS01OC4xUzk2LjUsNi40LDY0LjUsNi40UzYuNCwzMi41LDYuNCw2NC41UzMyLjUsMTIyLjYsNjQuNSwxMjIuNnogTTY0LjUsMTQuNiAgICBjMjcuNSwwLDQ5LjksMjIuNCw0OS45LDQ5LjlTOTIsMTE0LjQsNjQuNSwxMTQuNFMxNC42LDkyLDE0LjYsNjQuNVMzNywxNC42LDY0LjUsMTQuNnoiIGZpbGw9IiM4NzhmOTkiLz4KICAgICAgPHBhdGggZD0ibTUxLjEsOTMuNWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDI2LjQtMjYuNGMwLjgtMC44IDEuMi0xLjggMS4yLTIuOSAwLTEuMS0wLjQtMi4xLTEuMi0yLjlsLTI2LjQtMjYuNGMtMS42LTEuNi00LjItMS42LTUuOCwwLTEuNiwxLjYtMS42LDQuMiAwLDUuOGwyMy41LDIzLjUtMjMuNSwyMy41Yy0xLjYsMS42LTEuNiw0LjIgMCw1Ljh6IiBmaWxsPSIjODc4Zjk5Ii8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K)
+            &:hover
+               color: $header-grey
+               &:after
+                  background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KICA8Zz4KICAgIDxnPgogICAgICA8cGF0aCBkPSJNNjQuNSwxMjIuNmMzMiwwLDU4LjEtMjYsNTguMS01OC4xUzk2LjUsNi40LDY0LjUsNi40UzYuNCwzMi41LDYuNCw2NC41UzMyLjUsMTIyLjYsNjQuNSwxMjIuNnogTTY0LjUsMTQuNiAgICBjMjcuNSwwLDQ5LjksMjIuNCw0OS45LDQ5LjlTOTIsMTE0LjQsNjQuNSwxMTQuNFMxNC42LDkyLDE0LjYsNjQuNVMzNywxNC42LDY0LjUsMTQuNnoiIGZpbGw9IiNmMGYwZjAiLz4KICAgICAgPHBhdGggZD0ibTUxLjEsOTMuNWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDI2LjQtMjYuNGMwLjgtMC44IDEuMi0xLjggMS4yLTIuOSAwLTEuMS0wLjQtMi4xLTEuMi0yLjlsLTI2LjQtMjYuNGMtMS42LTEuNi00LjItMS42LTUuOCwwLTEuNiwxLjYtMS42LDQuMiAwLDUuOGwyMy41LDIzLjUtMjMuNSwyMy41Yy0xLjYsMS42LTEuNiw0LjIgMCw1Ljh6IiBmaWxsPSIjZjBmMGYwIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K)
+   &.-light
+      & .menu
+         color: $title-grey
+         &__item:hover
+            color: inherit
+      & .first-screen__content
+         & > h1
+            color: $title-grey
+         & > h3
+      & .contacts-phone
+         color: $black
+         & > span
+            color: $title-grey
+      & .header-contacts__select
+         color: $title-grey
+         &-check
+            &:hover
+               color: inherit
+            &:after
+               background:
+                  image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDUzLjgzNCA0NTMuODM0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NTMuODM0IDQ1My44MzQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoNi4xMjMyM2UtMTcsIC0xLCAxLCA2LjEyMzIzZS0xNywgMCwgNDUzLjgzNCkiPjxnPgoJPGc+CgkJPGc+CgkJCTxnPgoJCQkJPHBhdGggc3R5bGU9ImZpbGw6IzFBMUUyNSIgZD0iTTIyNi45MzIsMEMxMDEuNjI1LDAsMC4wMywxMDEuNTk1LDAuMDMsMjI2LjkwMkMwLDM1Mi4yNjksMTAxLjU5NSw0NTMuODM0LDIyNi45MzIsNDUzLjgzNCAgICAgIGMxMjUuMzA3LDAsMjI2Ljg3MS0xMDEuNTk1LDIyNi44NzEtMjI2LjkwMkM0NTMuODM0LDEwMS41OTUsMzUyLjIzOSwwLDIyNi45MzIsMHogTTIyNi45MzIsNDIzLjQ2NSAgICAgIGMtMTA4LjM0NCwwLTE5Ni41MDItODguMTU4LTE5Ni41MDItMTk2LjUwMlMxMTguNTg4LDMwLjQ2LDIyNi45MzIsMzAuNDZjMTA4LjM0NC0wLjAzLDE5Ni40NzIsODguMTI4LDE5Ni40NzIsMTk2LjUwMiAgICAgIEM0MjMuNDM0LDMzNS4yNzYsMzM1LjI3Niw0MjMuNDY1LDIyNi45MzIsNDIzLjQ2NXoiIGRhdGEtb3JpZ2luYWw9IiMwOTA1MDkiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMxYTFlMjUiPjwvcGF0aD4KCQkJCTxwYXRoIHN0eWxlPSJmaWxsOiMxQTFFMjUiIGQ9Ik0zMTMuNzIzLDE3Ny4xOTlsLTg3Ljg4NSw4Ny45MTVsLTg3Ljg4NS04Ny45MTVjLTUuOTI4LTUuOTI4LTE1LjU2NS01LjkyOC0yMS40OTIsMCAgICAgIHMtNS45MjgsMTUuNTY1LDAsMjEuNDkybDk4LjU4NSw5OC41ODVjMi45NzksMy4wNCw2LjkwMSw0LjQzOCwxMC43OTIsNC40MzhjMy45MjIsMCw3LjgxMy0xLjQ5LDEwLjc5Mi00LjQzOGw5OC41NTUtOTguNTg1ICAgICAgYzUuOTI4LTUuOTI4LDUuOTI4LTE1LjU2NSwwLTIxLjQ5MlMzMTkuNjUsMTcxLjI3MSwzMTMuNzIzLDE3Ny4xOTl6IiBkYXRhLW9yaWdpbmFsPSIjMDkwNTA5IiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMWExZTI1Ij48L3BhdGg+CgkJCTwvZz4KCQk8L2c+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
+         &-item:hover
+            color: inherit
+   & > .header
+      background-color: transparent
    &__content
       margin-top: 30vh
       position: relative
@@ -22,13 +87,11 @@
          margin-top: 23vw
       & > h1
          text-transform: uppercase
-         margin-bottom: 30px
          line-height: 1.3
-         color: #56ccf2
          @include w540-
             margin-bottom: 1vw
       & > h3
-         color: #d6d6d6
+         margin-top: 30px
          line-height: 1.3
       & > .btn-gradient
          margin-top: 50px

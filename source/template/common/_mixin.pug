@@ -4,11 +4,7 @@ mixin svgMix(svgClass, name)
 		use(xlink:href='assets/img/sprite.svg#'+name)
 
 mixin menu(menuLocate)
-	if (menuLocate)
-		- var _cl = "menu " + menuLocate;
-	else
-		- var _cl = "menu";
-	nav(class=_cl)
+	nav.menu(class=menuLocate)
 		-
 			var menuItems = [
 				{href: '#', text: 'Услуги'},
@@ -19,3 +15,75 @@ mixin menu(menuLocate)
 			]
 		each item in menuItems
 			a(href=item.href).menu__item= item.text
+
+mixin header()
+	header.header()
+		.header__left-area
+			a.logo-link(href="/")
+				img.logo-img(src="/assets/img/logo.svg", alt="logotype")
+			.header-contacts
+				.header-contacts__select
+					p.header-contacts__select-check
+						span г.&nbsp
+						| Санкт–Перербург
+					ul.header-contacts__select-list
+						li.header-contacts__select-item Краснодар
+						li.header-contacts__select-item Москва
+				p.contacts-phone
+					span +7 (921) 
+					| 55-66-846
+		.header__menu-area
+			+menu('-header')
+			button.alt-menu-btn(data-state='no-active'): span
+			button.header__enter
+
+mixin footer(circleMode)
+	-
+		var social = [
+			{name: 'Vkontakte'},
+			{name: 'Facebook'},
+			{name: 'Twitter'},
+			{name: 'Instagram'}
+		]
+	footer.footer
+		.container-rel.-big
+			.dark-substrate
+				.footer__wrap
+					.footer-content__main
+						a.logo-link(href="/")
+							img.logo-img(src="/assets/img/logo.svg", alt="logotype")
+						+menu('-footer')
+					.social.-copy
+						each item in social
+							a(href="#").social__link
+								+svgMix('social__icon', item.name)
+					.footer-contacts
+						.footer-contacts__top
+							p.footer-contacts__city г. Санкт–Перербург
+							p.contacts-phone
+								span +7 (921) 
+								| 55-66-846
+						p.footer-contacts__address ул. Набережная р. Фонтанки, 123 офис 201
+					.footer-content__bottom
+						p © Copyright 2011−2017 BLAZE
+						a(href="#" data-use="agreement")
+							span(data-content="desktop") Соглашение об обработке персональных данных
+							span(data-content="tablet") Пользовательское соглашение
+						.social
+							each item in social
+								a(href="#").social__link
+									+svgMix('social__icon', item.name)
+			if (circleMode)
+				object(type="image/svg+xml" data="assets/img/ov-lg.svg" class= circleMode).bg-circle.-footer
+
+mixin first-screen(obj)
+	.first-screen(class="-"+page+" "+obj.mode)
+		+header()
+		.first-screen__content.container
+			if (obj.title)
+				h1= obj.title
+			if (obj.subtitle)
+				h3= obj.subtitle
+			if (obj.btn)
+				button.btn-gradient(data-target= obj.btn.btnTarget)= obj.btn.btnText
+		//- img(src="assets/img/first-screen-bg/1st_bg_image_2x.jpg", alt="").first-screen__bg

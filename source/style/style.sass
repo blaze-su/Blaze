@@ -30,7 +30,6 @@ h2
 			margin: 90px auto 50px
 			text-transform: uppercase
 			text-align: center
-			color: $title-grey
 			@include w540-
 				margin: 50px auto 30px
 h3
@@ -41,13 +40,18 @@ h3
 	@include w768-
 		font-size: 32px
 	&.-md
-
+h4
+	font-size: 36px
+	&.title
+		&.-sm
+			text-align: center
 
 html
 	font: 20px 'RobotoLight'
 	min-width: 320px
 	width: 100%
 	height: auto
+	color: $title-grey
 
 body
 	position: relative
@@ -61,15 +65,15 @@ body
 	margin: 0 auto
 	background: $main-bg-grey
 	overflow-x: hidden
-	&.is-home
-		& header.header
-			background-color: transparent
 
 .container
 	max-width: 1280px
 	width: 100%
 	margin-left: auto
 	margin-right: auto
+	&-rel
+		@extend .container
+		position: relative
 	&.-big
 		max-width: 1920px
 
@@ -95,6 +99,14 @@ body
 		color: $header-grey
 		& > span
 			color: #878f99
+
+.svg-icon
+	max-width: 90px
+	width: auto
+	max-height: 90px
+	height: auto
+	display: block
+	fill: $svg-blue
 
 .btn
 	&-gradient
@@ -142,6 +154,7 @@ body
 
 .dark-substrate
 	position: relative
+	height: 100%
 	z-index: 1
 	&:before
 		content: ''
@@ -171,6 +184,8 @@ body
 		position: relative
 		width: 240px
 		height: 60px
+		margin-left: auto
+		margin-right: auto
 	&:after
 		content: ''
 		width: 6px

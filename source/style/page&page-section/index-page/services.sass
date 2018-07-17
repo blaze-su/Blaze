@@ -6,8 +6,6 @@
       margin: -10px -5px 0
       &-wrap
          margin-bottom: 100px
-         & > .container
-            position: relative
       @include w1024-
          max-width: 100%
          margin: -10px auto 100px
@@ -34,13 +32,11 @@
       @include w768-
          min-height: auto
          padding: 20px 5px 50px 20px
-      @include w540-
-         min-width: auto
       &:hover
          background-image: url('../img/service-bg.png')
          background-repeat: no-repeat
          background-size: cover
-         & > .services__item-icon
+         & > .svg-icon
             fill: $white
          & .services__item-desc
             color: $white
@@ -51,17 +47,6 @@
          overflow: hidden
          @media all and (max-width: 1279px)
             max-height: none
-      &-icon
-         max-width: 90px
-         max-height: 90px
-         min-height: 90px
-         width: auto
-         fill: $svg-blue
-         margin-bottom: 15px
-         @include w1200-
-            margin-bottom: 60px
-         @include w540-
-            margin-bottom: 40px
       &-name
          font-size: 1.2rem
          color: $white
@@ -88,8 +73,7 @@
       &-wrap
          padding: 100px 0
          overflow: hidden
-         & > .container
-            position: relative
+         & > .container-rel
             z-index: 1
       @include w540-
          height: 93.75vw
@@ -108,3 +92,10 @@
          &:not(:active):hover
             top: 2px
             right: -3px
+
+.svg-icon.-services
+   margin-bottom: 15px
+   @include w1200-
+      margin-bottom: 60px
+   @include w540-
+      margin-bottom: 40px

@@ -1,0 +1,103 @@
+extends ../_template
+
+block variables
+   - var page = 'smm';
+
+block content
+   .smm-what
+      h2.title.-bg Что такое SMM
+      h4.title.-sm Продвижение бренда в социальных сетях
+      .container-rel
+         img(src="assets/img/instagram-screenshots.png", alt="").smm-what__image
+      //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
+   .smm-instagram
+      h2.title.-bg кому подходит инстаграм
+      .container-rel
+         .smm-instagram__list
+            -
+               var instList = [
+                  'Интернет–магазины',
+                  'Индустрия красоты',
+                  'Ректораны и кофе',
+                  'Фитнес и здоровье',
+                  'Развлечения',
+                  'Личный PR',
+                  'Образование',
+                  'Недвижимость'
+               ]
+            - var totalCount = 0
+            each c in [1, 2]
+               .smm-instagram__list-row
+                  - for(var i = totalCount; i < 4*c; i++)
+                     - totalCount++
+                     .smm-instagram__list-col
+                        .smm-instagram__item
+                           +svgMix('svg-icon -smm-instagram','icon_1')
+                           p.smm-instagram__item-name= instList[i]
+      //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
+   .smm-task.-bg-w
+      h2.title.-bg Какие задачи решает SMM
+      .container-rel
+         .smm-task__list
+            -
+               var smmTasks = [
+                  {name: ['Управляет ', 'репутацией бренда'], svg: 'icon_1'},
+                  {name: ['Повышает лояльность ', 'аудитории к бренду'], svg: 'icon_2'},
+                  {name: '', svg: ''},
+                  {name: '', svg: ''},
+                  {name: ['Рекламирует акции ', 'и события компании'], svg: 'icon_4'},
+                  {name: ['Реализует ', 'лидогенерацию'], svg: 'icon_5'}
+               ]
+            each item in smmTasks
+               - if(item.name == '' && item.svg == '')
+                  .smm-task__item.-empty
+               - else
+                  .smm-task__item
+                     +svgMix('svg-icon -smm-task', item.svg)
+                     p.smm-task__item-name
+                        each text, key in item.name
+                           - if (key == 0)
+                              = text
+                           - else
+                              br
+                              = text
+      //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
+   .smm-plus
+      h2.title.-bg преимущества работы с нами
+      .container-rel
+         .smm-plus__wrap
+            .smm-plus__area-left
+               .smm-plus__detail
+                  .smm-plus__detail-naming
+                     +svgMix('svg-icon -smm-detail', 'icon_1')
+                     p.smm-plus__detail-name Экспертность
+                  ul.smm-plus__detail-list
+                     li.smm-plus__detail-plus Отслеживаем эффективность каждого объявления
+                     li.smm-plus__detail-plus Используем систему сквозной аналитики
+                     li.smm-plus__detail-plus Мы ориентируемся на конкретные цели
+                     li.smm-plus__detail-plus Измеряемые результаты работы
+               button.smm-plus__consult Получи консультацию бесплатно
+            .smm-plus__area-right
+               .smm-plus__list
+                  -
+                     var plus = [
+                        'Понятность',
+                        'Минимум участия со стороны заказчика',
+                        'Под ключ',
+                        'Уникальный контент'
+                     ]
+                  each item in plus
+                     .smm-plus__item
+                        +svgMix('svg-icon -smm-plus', 'icon_1')
+                        p.smm-plus__item-name= item
+      //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
+
+
+
+
+
+   //- .smm-plus
+   //-    h2.title.-bg 
+   //-    .container-rel
+   //-       .smm-plus__wrap
+   //-    //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
