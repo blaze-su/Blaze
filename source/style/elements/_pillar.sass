@@ -1,0 +1,88 @@
+.pillar
+   max-width: 420px
+   width: 100%
+   padding: 52px 0 0 28px
+   height: 1030px
+   display: flex
+   flex-direction: column
+   &:not(:first-child):not(:last-child)
+      background-color: rgba($svg-blue, 0.9)
+      .pillar
+         &__name
+            color: $white
+         &__list
+         &__item
+            color: rgba($white, 0.8)
+         &__price
+            color: $white
+         &__btn
+            background-color: $title-grey
+   &__head
+      padding-left: 20px
+   &__foot
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      flex: 1
+      padding-bottom: 60px
+      padding-left: 28px
+      background:
+         image: url('../img/mask-2.png')
+   &__name
+      font-size: 36px
+      text-transform: uppercase
+      margin-bottom: 20px
+      +Roboto(bold)
+   &__list
+      padding-left: 24px
+   &__item
+      list-style-type: disc
+      line-height: 1.56
+      margin-bottom: 15px
+      font-size: 18px
+      &:last-child
+         margin-bottom: 35px
+   &__price
+      font-size: 48px
+      +Roboto(bold)
+   &__btn
+      margin-top: 35px
+      font-size: 1rem
+      color: $white
+      +Roboto()
+      width: 240px
+      height: 60px
+      position: relative
+      background-color: $svg-blue
+      text-align: left
+      padding-left: 24px
+      margin-left: 32px
+      &:after
+         content: ''
+         position: absolute
+         top: 50%
+         right: 27px
+         width: 12px
+         height: 16px
+         transform: translateY(-50%)
+         background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTIuMDA0IDQ5Mi4wMDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5Mi4wMDQgNDkyLjAwNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zODIuNjc4LDIyNi44MDRMMTYzLjczLDcuODZDMTU4LjY2NiwyLjc5MiwxNTEuOTA2LDAsMTQ0LjY5OCwwcy0xMy45NjgsMi43OTItMTkuMDMyLDcuODZsLTE2LjEyNCwxNi4xMiAgICBjLTEwLjQ5MiwxMC41MDQtMTAuNDkyLDI3LjU3NiwwLDM4LjA2NEwyOTMuMzk4LDI0NS45bC0xODQuMDYsMTg0LjA2Yy01LjA2NCw1LjA2OC03Ljg2LDExLjgyNC03Ljg2LDE5LjAyOCAgICBjMCw3LjIxMiwyLjc5NiwxMy45NjgsNy44NiwxOS4wNGwxNi4xMjQsMTYuMTE2YzUuMDY4LDUuMDY4LDExLjgyNCw3Ljg2LDE5LjAzMiw3Ljg2czEzLjk2OC0yLjc5MiwxOS4wMzItNy44NkwzODIuNjc4LDI2NSAgICBjNS4wNzYtNS4wODQsNy44NjQtMTEuODcyLDcuODQ4LTE5LjA4OEMzOTAuNTQyLDIzOC42NjgsMzg3Ljc1NCwyMzEuODg0LDM4Mi42NzgsMjI2LjgwNHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+         background-repeat: no-repeat
+         display: block
+   &:first-child
+      background-color: rgba($white, 0.8)
+      .pillar
+         &__name
+            color: $footer-text
+         &__list
+         &__item
+         &__price
+         &__btn
+   &:last-child
+      background-color: rgba($white, 0.9)
+      .pillar
+         &__name
+            color: $svg-blue
+         &__list
+         &__item
+         &__price
+         &__btn
