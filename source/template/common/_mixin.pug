@@ -55,7 +55,7 @@ mixin footer(circleMode)
 						+menu('-footer')
 					.social.-copy
 						each item in social
-							a(href="#").social__link
+							a(href="").social__link
 								+svgMix('social__icon', item.name)
 					.footer-contacts
 						.footer-contacts__top
@@ -71,10 +71,10 @@ mixin footer(circleMode)
 							span(data-content="tablet") Пользовательское соглашение
 						.social
 							each item in social
-								a(href="#").social__link
+								a(href="").social__link
 									+svgMix('social__icon', item.name)
 			if (circleMode)
-				object(type="image/svg+xml" data="assets/img/ov-lg.svg" class= circleMode).bg-circle.-footer
+				object(type="image/svg+xml" data="assets/img/ov-lg.svg" class= '-footer'+circleMode).bg-circle
 
 mixin first-screen(obj)
 	.first-screen(class="-"+page+" "+obj.mode)

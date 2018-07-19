@@ -8,7 +8,13 @@
    &:not(:first-child):not(:last-child)
       background-color: rgba($svg-blue, 0.9)
       .pillar
+         &__foot
+            background:
+               image: url('../img/mask-3.png')
+               position-y: 2px
          &__name
+            color: $white
+         &__target
             color: $white
          &__list
          &__item
@@ -19,6 +25,7 @@
             background-color: $title-grey
    &__head
       padding-left: 20px
+      padding-right: 20px
    &__foot
       display: flex
       flex-direction: column
@@ -28,23 +35,33 @@
       padding-left: 28px
       background:
          image: url('../img/mask-2.png')
+         position-y: 2px
    &__name
       font-size: 36px
       text-transform: uppercase
-      margin-bottom: 20px
+      margin-bottom: 35px
       +Roboto(bold)
+   &__target
+      margin-top: -25px
+      margin-bottom: 35px
+      display: block
+      font-size: 24px
+      +Roboto()
    &__list
       padding-left: 24px
    &__item
       list-style-type: disc
       line-height: 1.56
-      margin-bottom: 15px
+      margin-bottom: 20px
       font-size: 18px
       &:last-child
-         margin-bottom: 35px
+         margin-bottom: 40px
    &__price
       font-size: 48px
       +Roboto(bold)
+      & > span
+         font-size: 24px
+         +Roboto()
    &__btn
       margin-top: 35px
       font-size: 1rem
@@ -73,6 +90,7 @@
       .pillar
          &__name
             color: $footer-text
+         &__target
          &__list
          &__item
          &__price
@@ -82,6 +100,7 @@
       .pillar
          &__name
             color: $svg-blue
+         &__target
          &__list
          &__item
          &__price

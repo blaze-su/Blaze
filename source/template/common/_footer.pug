@@ -17,7 +17,7 @@ block footer
 						+menu('-footer')
 					.social.-copy
 						each item in social
-							a(href="#").social__link
+							a(href="").social__link
 								+svgMix('social__icon', item.name)
 					.footer-contacts
 						.footer-contacts__top
@@ -33,6 +33,6 @@ block footer
 							span(data-content="tablet") Пользовательское соглашение
 						.social
 							each item in social
-								a(href="#").social__link
+								a(href="").social__link
 									+svgMix('social__icon', item.name)
 			object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-footer.-index

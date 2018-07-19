@@ -22,7 +22,7 @@ block content
          .container-rel
             .services__list
                each item in servicesList
-                  a(href="#").services__item
+                  a(href="").services__item
                      +svgMix('svg-icon -services', item.svgName)
                      .services__item-info
                         p.services__item-name= item.name
@@ -34,102 +34,101 @@ block content
             object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-services
       .services__service-wrap.-bg-w
          .container-rel
-            a(href="#").services__service
+            a(href="").services__service
                h2.services__service-name CRM Bitrix24
                button.btn-sector
             object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-service
    .our-work
       .container-rel
-         .our-work__wrap
-            h2.title.-bg как мы работаем
-            -
-               var steps = [
-                  {
-                     name: 'аналитика и проектирование',
-                     team: 'Проектировщик, Дизайнер, Аналитик',
-                     process: [
-                        {
-                           title: 'Вход',
-                           list: ['Концепция','Анализ целевой аудитории','Анализ конкурентов']
-                        },
-                        {
-                           title: 'Процесс',
-                           list: ['Сценарии поведения пользователей','Разработка структуры','Юзабилити тестирование']
-                        },
-                        {
-                           title: 'Результат',
-                           list: ['Интерактивный прототип']
-                        }
-                     ],
-                     tech: 'Adobe Photoshop, Sketch, Invision App',
-                     techLinks: ['Ps', 'Sk', 'In']
-                  },
-                  {
-                     name: 'визуальный дизайн',
-                     team: 'Дизайнер, Проектировщик, Аналитик',
-                     process: [
-                        {
-                           title: 'Вход',
-                           list: ['Концепция','Интерактивный прототип','Материалы клиента']
-                        },
-                        {
-                           title: 'Процесс',
-                           list: ['Концепция дизайна','Разработка дизайна']
-                        },
-                        {
-                           title: 'Результат',
-                           list: ['Макеты экранов','Интерактивный прототип','Кейс проекта']
-                        }
-                     ],
-                     tech: 'Adobe Photoshop, Adobe Illustrator, After Effects, Sketch, Invision App',
-                     techLinks: ['Ps','Ai','Ae','Sk','In']
-                  },
-                  {
-                     name: 'разработка и поддержка',
-                     team: 'Дизайнер, Frontend−разработчик, Программист, Тестировщик',
-                     process: [
-                        {
-                           title: 'Вход',
-                           list: ['Макеты экранов','Интерактивный прототип']
-                        },
-                        {
-                           title: 'Процесс',
-                           list: ['Техническое проектирование','Адаптивная верстка','Разработка модулей', 'Настройка CMS', 'Тестирование и отладка']
-                        },
-                        {
-                           title: 'Результат',
-                           list: ['Веб−сайт','API','Административная панель']
-                        }
-                     ],
-                     tech: 'VS Code, Gulp, Git, Zepplin',
-                     techLinks: ['Vs', 'Gu', 'Gt', 'Zp']
-                  },
-               ]
+         h2.title.-bg как мы работаем
+         -
+            var steps = [
+               {
+                  name: 'аналитика и проектирование',
+                  team: 'Проектировщик, Дизайнер, Аналитик',
+                  process: [
+                     {
+                        title: 'Вход',
+                        list: ['Концепция','Анализ целевой аудитории','Анализ конкурентов']
+                     },
+                     {
+                        title: 'Процесс',
+                        list: ['Сценарии поведения пользователей','Разработка структуры','Юзабилити тестирование']
+                     },
+                     {
+                        title: 'Результат',
+                        list: ['Интерактивный прототип']
+                     }
+                  ],
+                  tech: 'Adobe Photoshop, Sketch, Invision App',
+                  techLinks: ['Ps', 'Sk', 'In']
+               },
+               {
+                  name: 'визуальный дизайн',
+                  team: 'Дизайнер, Проектировщик, Аналитик',
+                  process: [
+                     {
+                        title: 'Вход',
+                        list: ['Концепция','Интерактивный прототип','Материалы клиента']
+                     },
+                     {
+                        title: 'Процесс',
+                        list: ['Концепция дизайна','Разработка дизайна']
+                     },
+                     {
+                        title: 'Результат',
+                        list: ['Макеты экранов','Интерактивный прототип','Кейс проекта']
+                     }
+                  ],
+                  tech: 'Adobe Photoshop, Adobe Illustrator, After Effects, Sketch, Invision App',
+                  techLinks: ['Ps','Ai','Ae','Sk','In']
+               },
+               {
+                  name: 'разработка и поддержка',
+                  team: 'Дизайнер, Frontend−разработчик, Программист, Тестировщик',
+                  process: [
+                     {
+                        title: 'Вход',
+                        list: ['Макеты экранов','Интерактивный прототип']
+                     },
+                     {
+                        title: 'Процесс',
+                        list: ['Техническое проектирование','Адаптивная верстка','Разработка модулей', 'Настройка CMS', 'Тестирование и отладка']
+                     },
+                     {
+                        title: 'Результат',
+                        list: ['Веб−сайт','API','Административная панель']
+                     }
+                  ],
+                  tech: 'VS Code, Gulp, Git, Zepplin',
+                  techLinks: ['Vs', 'Gu', 'Gt', 'Zp']
+               },
+            ]
 
-            .our-work__steps
-               each item, key in steps
-                  .our-work__step
-                     .our-work__step-wrap
-                        .our-work__step-title-box
-                           .our-work__step-count= key+1
-                           p.our-work__step-title= item.name
-                        .our-work__step-content
-                           .our-work__step-team-wrap
-                              span.our-work__step-team-mark Участники
-                              p.our-work__step-team= item.team
-                           .our-work__step-process-wrap
-                              each i in item.process
-                                 .our-work__step-process
-                                    p.our-work__step-process-title= i.title
-                                    ul.our-work__step-process-list
-                                       each j in i.list
-                                          li.our-work__step-process-item= j
-                           .our-work__step-tech-wrap
-                              p.our-work__step-tech-title Технологии
-                              p.our-work__step-tech= item.tech
-                              .our-work__step-tech-list
-                                 each i in item.techLinks
-                                    .our-work__step-tech-item= i
+         .our-work__step-list
+            each item, key in steps
+               .our-work__step
+                  .our-work__step-wrap
+                     .our-work__step-title-box
+                        .our-work__step-count= key+1
+                        p.our-work__step-title= item.name
+                     .our-work__step-content
+                        .our-work__step-team-wrap
+                           span.our-work__step-team-mark Участники
+                           p.our-work__step-team= item.team
+                        .our-work__step-process-wrap
+                           each i in item.process
+                              .our-work__step-process
+                                 p.our-work__step-process-title= i.title
+                                 ul.our-work__step-process-list
+                                    each j in i.list
+                                       li.our-work__step-process-item= j
+                        .our-work__step-tech-wrap
+                           p.our-work__step-tech-title Технологии
+                           p.our-work__step-tech= item.tech
+                           .our-work__step-tech-list
+                              each i in item.techLinks
+                                 .our-work__step-tech-item= i
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-work
    .question
       .container-rel
@@ -144,43 +143,40 @@ block content
          object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-question
    .clients.-bg-w
       .container-rel
-         .clients__wrap
-            h2.title.-bg наши клиенты
-            - var i = 1;
-            .clients__list-wrap
-               .clients__list
-                  while i < 16
-                     a(href="#").clients__item
-                        img.clients__item-image(src="assets/img/clients/"+ i +"-hover.png", alt="")
-                        img.clients__item-image(src="assets/img/clients/"+ i++ +".png", alt="")
+         h2.title.-bg наши клиенты
+         - var i = 1;
+         .clients__list-wrap
+            .clients__list
+               while i < 16
+                  a(href="").clients__item
+                     img.clients__item-image(src="assets/img/clients/"+ i +"-hover.png", alt="")
+                     img.clients__item-image(src="assets/img/clients/"+ i++ +".png", alt="")
          object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-clients
    .new-articles
       .container-rel.-big
          .container
-            .new-articles__wrap
-               h2.title.-bg новые статьи
-
-               -
-                  var articles = [
-                     {name: ['14 шагов: как сделать контент-маркетинг полезным'], author: 'Александр Сидоров'},
-                     {name: ['Как выбрать', 'название стартапа'], author: 'Вадим Постол'},
-                     {name: ['Что нужно знать при заказе?', 'SEO в 2017'], author: 'Юрий Горяев'}
-                  ]
-               .new-articles__list-wrap
-                  .new-articles__list
-                     each item, key in articles
-                        .new-articles__item
-                           a(href="#").new-articles__item-link
-                              img(src="assets/img/new-articles/"+ (key+1) +".png", alt="").new-articles__item-image
-                           .new-articles__item-content
-                              a(href="#").new-articles__item-title
-                                 each i, key2 in item.name
-                                    if (key2 !== 0)
-                                       br
-                                       = i
-                                    else
-                                       = i
-                              p.new-articles__item-author= item.author
-               .direct-link__wrap
-                  a(href="#").direct-link Перейти в блог
+            h2.title.-bg новые статьи
+            -
+               var articles = [
+                  {name: ['14 шагов: как сделать контент-маркетинг полезным'], author: 'Александр Сидоров'},
+                  {name: ['Как выбрать', 'название стартапа'], author: 'Вадим Постол'},
+                  {name: ['Что нужно знать при заказе?', 'SEO в 2017'], author: 'Юрий Горяев'}
+               ]
+            .new-articles__list-wrap
+               .new-articles__list
+                  each item, key in articles
+                     .new-articles__item
+                        a(href="").new-articles__item-link
+                           img(src="assets/img/new-articles/"+ (key+1) +".png", alt="").new-articles__item-image
+                        .new-articles__item-content
+                           a(href="").new-articles__item-title
+                              each i, key2 in item.name
+                                 if (key2 !== 0)
+                                    br
+                                    = i
+                                 else
+                                    = i
+                           p.new-articles__item-author= item.author
+            .direct-link__wrap
+               a(href="").direct-link Перейти в блог
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-articles
