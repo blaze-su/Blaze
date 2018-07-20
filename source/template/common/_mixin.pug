@@ -86,4 +86,9 @@ mixin first-screen(obj)
 				h3= obj.subtitle
 			if (obj.btn)
 				button.btn-gradient(data-target= obj.btn.btnTarget)= obj.btn.btnText
-		//- img(src="assets/img/first-screen-bg/1st_bg_image_2x.jpg", alt="").first-screen__bg
+		if (obj.slider)
+			.first-screen-slider
+				.first-screen-slider__slide(style="background-image: url('assets/img/first-screen-bg/smm/1st-screen_1.jpg')")
+				.first-screen-slider__slide(style="background-image: url('assets/img/first-screen-bg/smm/1st-screen_2.jpg')")
+				.first-screen-slider__slide(style="background-image: url('assets/img/first-screen-bg/smm/1st-screen_3.jpg')")
+				.first-screen-slider__slide(style="background-image: url('assets/img/first-screen-bg/smm/1st-screen_4.jpg')")
