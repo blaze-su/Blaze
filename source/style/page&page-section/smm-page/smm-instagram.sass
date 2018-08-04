@@ -1,21 +1,42 @@
 .smm-instagram
    background:
+      color: rgb(217, 222, 225)
       image: url('../img/smm/3rd-screen_2.jpg')
       repeat: no-repeat
       size: cover
+   @include w1200-
+      background-image: none
    &__list
       max-width: 1280px
       padding-left: 85px
+      margin-top: -50px
+      @include w1200-
+         padding-left: 0
+         max-width: 618px
+         margin-left: auto
+         margin-right: auto
       &-row
          display: flex
          flex-wrap: wrap
-         &:first-child
-            margin-top: -50px
          &:nth-child(2n)
-            & > .smm-instagram__list-col
+            & .smm-instagram__list-col
                justify-content: flex-end
+               @include w1200-
+                  justify-content: flex-start
+         & .smm-instagram__list-col
+            @media all and (min-width: 1200px) and (max-width: 1365px)
+               justify-content: center !important
+      &-group
+         display: flex
+         flex-wrap: wrap
+         width: 50%
+         @include w1200-
+            width: 100%
+            &:nth-child(2n)
+               & > .smm-instagram__list-col
+                  justify-content: flex-end
       &-col
-         width: 25%
+         width: 50%
          margin-top: 100px
          display: flex
    &__item
@@ -27,4 +48,4 @@
          +Roboto()
 
 .svg-icon.-smm-instagram
-   margin: 0 auto 30px
+   margin: 0 auto 20px

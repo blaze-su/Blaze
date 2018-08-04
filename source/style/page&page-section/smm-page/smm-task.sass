@@ -1,13 +1,26 @@
 .smm-task
    &__list
-      margin: -10px -5px 0
-      display: flex
-      flex-wrap: wrap
+      margin: auto
+      @media all and (max-width: 1280px)
+         max-width: 1022px
+      @include w1024-
+         max-width: 768px
+      &-wrap
+         margin: -10px -5px 0
+         display: flex
+         flex-wrap: wrap
+         @include w1024-
+            margin-left: 5px
+            margin-right: 5px
    &__item
       max-width: 420px
       width: 100%
       height: 420px
       margin: 10px 5px 0
+      @media all and (max-width: 1280px)
+         zoom: 0.8
+      @include w1024-
+         zoom: 0.8814
       &:not(.-empty)
          padding: 60px
          background-color: rgba($white, 0.8)
@@ -15,10 +28,16 @@
       &.-empty
          background:
             image: url('../img/mask-1.png')
+         @include w1024-
+            background-image: none
+            display: none
       &-name
          font-size: 24px
          line-height: 1.2
          +Roboto()
+      &-desc
+         margin-top: 15px
+         line-height: 1.56
 
 .svg-icon.-smm-task
-   margin-bottom: 95px
+   margin-bottom: 50px

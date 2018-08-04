@@ -81,7 +81,14 @@ mixin first-screen(obj)
 		+header()
 		.first-screen__content.container
 			if (obj.title)
-				h1= obj.title
+				h1
+					each item, key in obj.title
+						if (key == 0)
+							= item
+						else
+							br
+							= item
+
 			if (obj.subtitle)
 				h3= obj.subtitle
 			if (obj.btn)

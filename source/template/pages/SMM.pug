@@ -16,50 +16,61 @@ block content
          .smm-instagram__list
             -
                var instList = [
-                  'Интернет–магазины', 'Индустрия красоты',
-                  'Ректораны и кофе',
-                  'Фитнес и здоровье',
+                  'Интернет–магазины',
+                  'Индустрия красоты',
                   'Развлечения',
                   'Личный PR',
+                  'Ректораны и кафе',
+                  'Фитнес и здоровье',
                   'Образование',
                   'Недвижимость'
                ]
-            - var totalCount = 0
-            each c in [1, 2]
+            - var instListCount = 0
+            each a in [1, 2]
                .smm-instagram__list-row
-                  - for(var i = totalCount; i < 4*c; i++)
-                     - totalCount++
-                     .smm-instagram__list-col
-                        .smm-instagram__item
-                           +svgMix('svg-icon -smm-instagram','icon_1')
-                           p.smm-instagram__item-name= instList[i]
+                  each b in [1, 2]
+                     .smm-instagram__list-group
+                        each c in [1, 2]
+                           .smm-instagram__list-col
+                              .smm-instagram__item
+                                 +svgMix('svg-icon -smm-instagram','inst-icon_' + (instListCount+1))
+                                 p.smm-instagram__item-name= instList[instListCount]
+                                 - instListCount++
          object(type="image/svg+xml" data="assets/img/ov-gb.svg").bg-circle.-smm-inst
    .smm-task.-bg-w
       .container-rel
          h2.title.-bg Какие задачи решает SMM
          .smm-task__list
-            -
-               var smmTasks = [
-                  {name: ['Управляет ', 'репутацией бренда'], svg: 'icon_1'},
-                  {name: ['Повышает лояльность ', 'аудитории к бренду'], svg: 'icon_2'},
-                  {name: '', svg: ''},
-                  {name: '', svg: ''},
-                  {name: ['Рекламирует акции ', 'и события компании'], svg: 'icon_4'},
-                  {name: ['Реализует ', 'лидогенерацию'], svg: 'icon_5'}
-               ]
-            each item in smmTasks
-               - if(item.name == '' && item.svg == '')
-                  .smm-task__item.-empty
-               - else
-                  .smm-task__item
-                     +svgMix('svg-icon -smm-task', item.svg)
-                     p.smm-task__item-name
-                        each text, key in item.name
-                           - if (key == 0)
-                              = text
-                           - else
-                              br
-                              = text
+            .smm-task__list-wrap
+               -
+                  var smmTasks = [
+                     {name: ['Управляет ', 'репутацией бренда'],
+                        desc: 'SMM формирует у аудитории образ компании, который нужен Вам'},
+                     {name: ['Повышает лояльность ', 'аудитории к бренду'],
+                        desc: 'Присутствие в соц. сетях повышает уровень доверия клиентов к бренду'},
+                     {name: null},
+                     {name: null},
+                     {name: ['Рекламирует акции ', 'и события компании'],
+                        desc: 'Компания контактирует с клиентом в привычной для него среде'},
+                     {name: ['Реализует ', 'лидогенерацию'],
+                        desc: 'Качественный SMM приводит к Вам новых заинтересованных клиентов'}
+                  ]
+                  var  _key = 1
+               each item in smmTasks
+                  - if(item.name === null)
+                     .smm-task__item.-empty
+                  - else
+                     .smm-task__item
+                        +svgMix('svg-icon -smm-task', 'task-icon_' + _key)
+                        p.smm-task__item-name
+                           each text, key in item.name
+                              - if (key == 0)
+                                 = text
+                              - else
+                                 br
+                                 = text
+                        p.smm-task__item-desc= item.desc
+                        - _key++
          object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-task-head
          object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-task-foot
    .smm-plus
@@ -69,14 +80,14 @@ block content
             .smm-plus__area-left
                .smm-plus__detail
                   .smm-plus__detail-naming
-                     +svgMix('svg-icon -smm-detail', 'icon_1')
+                     +svgMix('svg-icon -smm-detail', 'adv-icon_1')
                      p.smm-plus__detail-name Экспертность
                   ul.smm-plus__detail-list
                      li.smm-plus__detail-plus Отслеживаем эффективность каждого объявления
                      li.smm-plus__detail-plus Используем систему сквозной аналитики
                      li.smm-plus__detail-plus Мы ориентируемся на конкретные цели
                      li.smm-plus__detail-plus Измеряемые результаты работы
-                  button(data-target="consult").smm-plus__consult Получи консультацию бесплатно
+                  button(data-target="consult").smm-plus__consult.-copy Получи консультацию бесплатно
             .smm-plus__area-right
                .smm-plus__list
                   -
@@ -86,10 +97,11 @@ block content
                         'Под ключ',
                         'Уникальный контент'
                      ]
-                  each item in plus
+                  each item, key in plus
                      .smm-plus__item
-                        +svgMix('svg-icon -smm-plus', 'icon_1')
+                        +svgMix('svg-icon -smm-plus', 'adv-icon_' + (key + 2))
                         p.smm-plus__item-name= item
+            button(data-target="consult").smm-plus__consult Получи консультацию бесплатно
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-smm-plus-head
          object(type="image/svg+xml" data="assets/img/ov-or.svg").bg-circle.-smm-plus-left
    .our-work
@@ -188,61 +200,63 @@ block content
       h2.title.-bg пакеты услуг
       .container-rel
          .service-packages__list
-            -
-               var services = [
-                  {
-                     title: 'старт', price: '10.000',
-                     list: ['Аудит аккаунта', 'Генерирование контента', 'Оформление страницы', 'Коммуникация с аудиторией']
-                  },
-                  {
-                     title: 'БИЗНЕС', price: '25.000',
-                     list: ['Анализ ситуации', 'Выявление проблем позиционирования бренда', 'Формирование контент–стратегии и характера коммуникации с аудиторией', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Работа с лидерами мнений', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
-                  },
-                  {
-                     title: 'СТАНДАРТ', price: '15.000',
-                     list: ['Аудит аккаунта', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
-                  }
-               ]
-            each item in services
-               .pillar
-                  .pillar__head
-                     p.pillar__name= item.title
-                     ul.pillar__list
-                        each item2 in item.list
-                           li.pillar__item= item2
-                  .pillar__foot
-                     p.pillar__price= item.price
-                     button.pillar__btn Хочу этот пакет
+            .service-packages__list-wrap
+               -
+                  var services = [
+                     {
+                        title: 'старт', price: '10.000',
+                        list: ['Аудит аккаунта', 'Генерирование контента', 'Оформление страницы', 'Коммуникация с аудиторией']
+                     },
+                     {
+                        title: 'БИЗНЕС', price: '25.000',
+                        list: ['Анализ ситуации', 'Выявление проблем позиционирования бренда', 'Формирование контент–стратегии и характера коммуникации с аудиторией', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Работа с лидерами мнений', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
+                     },
+                     {
+                        title: 'СТАНДАРТ', price: '15.000',
+                        list: ['Аудит аккаунта', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
+                     }
+                  ]
+               each item in services
+                  .pillar
+                     .pillar__head
+                        p.pillar__name= item.title
+                        ul.pillar__list
+                           each item2 in item.list
+                              li.pillar__item= item2
+                     .pillar__foot
+                        p.pillar__price= item.price
+                        button.pillar__btn Хочу этот пакет
       //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
    .targeting-ads
       h2.title.-bg настройка таргетированной рекламы
       .container-rel
          .targeting-ads__list
-            -
-               var adds = [
-                  {
-                     title: 'старт', target: 'охват', price: '5.000',
-                     list: ['Запуск 3-4 промо-постов (для охвата своих подписчиков)', 'Таргетирование по возрасту и географическому положению', 'Отслеживание результатов рекламы', 'Отслеживание взаимодействия пользователей с объявлением, коммуникация']
-                  },
-                  {
-                     title: 'БИЗНЕС', target: 'лидогенерация', price: '13.000',
-                     list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Проработка демографиии, интересов, географического положения аудитории для точечного таргетирования', 'Разработка и согласование креативов', 'Создание лид–формы', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок']
-                  },
-                  {
-                     title: 'СТАНДАРТ', target: 'вовлеченность', price: '8.000',
-                     list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Таргетирование по возрасту и географическому положению', 'Разработка креативов', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок', 'Отслеживание взаимодействия пользователей с объявлениями, коммуникация']
-                  }
-               ]
-            each item in adds
-               .pillar
-                  .pillar__head
-                     p.pillar__name= item.title
-                     span.pillar__target= 'Цель: '+item.target
-                     ul.pillar__list
-                        each item2 in item.list
-                           li.pillar__item= item2
-                  .pillar__foot
-                     p.pillar__price= item.price
-                        span  + бюджет
-                     button.pillar__btn Хочу этот пакет
+            .targeting-ads__list-wrap
+               -
+                  var adds = [
+                     {
+                        title: 'старт', target: 'охват', price: '5.000',
+                        list: ['Запуск 3-4 промо-постов (для охвата своих подписчиков)', 'Таргетирование по возрасту и географическому положению', 'Отслеживание результатов рекламы', 'Отслеживание взаимодействия пользователей с объявлением, коммуникация']
+                     },
+                     {
+                        title: 'БИЗНЕС', target: 'лидогенерация', price: '13.000',
+                        list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Проработка демографиии, интересов, географического положения аудитории для точечного таргетирования', 'Разработка и согласование креативов', 'Создание лид–формы', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок']
+                     },
+                     {
+                        title: 'СТАНДАРТ', target: 'вовлеченность', price: '8.000',
+                        list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Таргетирование по возрасту и географическому положению', 'Разработка креативов', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок', 'Отслеживание взаимодействия пользователей с объявлениями, коммуникация']
+                     }
+                  ]
+               each item in adds
+                  .pillar
+                     .pillar__head
+                        p.pillar__name= item.title
+                        span.pillar__target= 'Цель: '+item.target
+                        ul.pillar__list
+                           each item2 in item.list
+                              li.pillar__item= item2
+                     .pillar__foot
+                        p.pillar__price= item.price
+                           span  + бюджет
+                        button.pillar__btn Хочу этот пакет
       //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
