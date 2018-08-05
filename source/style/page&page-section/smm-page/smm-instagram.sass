@@ -15,6 +15,8 @@
          max-width: 618px
          margin-left: auto
          margin-right: auto
+      @media all and (min-width: 540px) and (max-width: 767px)
+         padding: 0 15px
       &-row
          display: flex
          flex-wrap: wrap
@@ -26,6 +28,9 @@
          & .smm-instagram__list-col
             @media all and (min-width: 1200px) and (max-width: 1365px)
                justify-content: center !important
+            @include w540-
+               justify-content: center !important
+               width: 100%
       &-group
          display: flex
          flex-wrap: wrap
@@ -35,10 +40,14 @@
             &:nth-child(2n)
                & > .smm-instagram__list-col
                   justify-content: flex-end
+                  @include w540-
+                     justify-content: flex-start
       &-col
          width: 50%
          margin-top: 100px
          display: flex
+         @include w540-
+            margin-top: 50px
    &__item
       max-width: 100%
       width: max-content

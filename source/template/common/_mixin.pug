@@ -93,6 +93,7 @@ mixin first-screen(obj)
 				h3= obj.subtitle
 			if (obj.btn)
 				button.btn-gradient(data-target= obj.btn.btnTarget)= obj.btn.btnText
+					//- img(src="assets/img/button/button_idle.svg", alt="")
 		if (obj.slider)
 			.first-screen-slider
 				.first-screen-slider__slide(style="background-image: url('assets/img/first-screen-bg/smm/1st-screen_1.jpg')")

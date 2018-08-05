@@ -1,7 +1,23 @@
 .smm-what
-   & > h4.title.-sm
-      margin-top: -35px
+   & h4.title.-sm
+      margin-top: -25px
+      margin-bottom: 35px
    &__image
       margin-top: 50px
       max-width: 1280px
       width: auto
+      @include w540-
+         display: none
+   &__mobile-content
+      display: none
+      @include w540-
+         display: block
+   &__inst
+      &-link
+         display: block
+      &-photo
+         height: auto
+         width: auto
+         max-width: 100%
+         margin: auto
+         display: block

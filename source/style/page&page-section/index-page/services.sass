@@ -36,7 +36,6 @@
          padding: 20px 5px 50px 20px
       @include w360-
          min-width: 100%
-
          margin-left: 0
          margin-right: 0
       &:hover
@@ -48,7 +47,10 @@
          & .services__item-desc
             color: $white
          & > .btn-sector
-            background: url('../img/sprite.png') -10px -151px
+            background:
+               image: url('../img/btn-sprite.png')
+               repeat: no-repeat
+               position: -20px -161px
       &-info
          max-height: 200px
          overflow: hidden
@@ -87,18 +89,18 @@
          padding: 6.25vw
       &:not(:active):hover
          & > .btn-sector
-            background: url('../img/sprite.png') -10px -151px
+            background:
+               image: url('../img/btn-sprite.png')
+               repeat: no-repeat
+               position: -20px -161px
       &-name
          color: $white
       & > .btn-sector
          position: absolute
-         height: 82px
-         top: 0
-         right: -7px
+         top: 3px
+         right: -4px
          transform: rotate(-90deg)
          &:not(:active):hover
-            top: 2px
-            right: -3px
 
 .svg-icon.-services
    margin-bottom: 15px

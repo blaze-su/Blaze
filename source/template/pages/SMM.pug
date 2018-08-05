@@ -8,7 +8,16 @@ block content
       .container-rel
          h2.title.-bg Что такое SMM
          h4.title.-sm Продвижение бренда в социальных сетях
-         img(src="assets/img/instagram-screenshots.png", alt="").smm-what__image
+         img(src="assets/img/smm/inst/instagram-screenshots.png", alt="").smm-what__image
+         .smm-what__mobile-content
+            a(href="").smm-what__inst-link
+               img(src="assets/img/smm/inst/instagram-screenshot_1.png", alt="").smm-what__inst-photo
+            a(href="").smm-what__inst-link
+               img(src="assets/img/smm/inst/instagram-screenshot_2.png", alt="").smm-what__inst-photo
+            a(href="").smm-what__inst-link
+               img(src="assets/img/smm/inst/instagram-screenshot_1.png", alt="").smm-what__inst-photo
+            a(href="").smm-what__inst-link
+               img(src="assets/img/smm/inst/instagram-screenshot_2.png", alt="").smm-what__inst-photo
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-smm-what
    .smm-instagram
       .container-rel
@@ -101,7 +110,8 @@ block content
                      .smm-plus__item
                         +svgMix('svg-icon -smm-plus', 'adv-icon_' + (key + 2))
                         p.smm-plus__item-name= item
-            button(data-target="consult").smm-plus__consult Получи консультацию бесплатно
+            button(data-target="consult").smm-plus__consult Получи консультацию 
+               span.-hidden бесплатно
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-smm-plus-head
          object(type="image/svg+xml" data="assets/img/ov-or.svg").bg-circle.-smm-plus-left
    .our-work
