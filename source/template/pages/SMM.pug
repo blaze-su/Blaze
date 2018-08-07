@@ -96,7 +96,7 @@ block content
                      li.smm-plus__detail-plus Используем систему сквозной аналитики
                      li.smm-plus__detail-plus Мы ориентируемся на конкретные цели
                      li.smm-plus__detail-plus Измеряемые результаты работы
-                  button(data-target="consult").smm-plus__consult.-copy Получи консультацию бесплатно
+                  button(data-target="consult").btn-gradient.-long.-copy Получи консультацию бесплатно
             .smm-plus__area-right
                .smm-plus__list
                   -
@@ -110,7 +110,7 @@ block content
                      .smm-plus__item
                         +svgMix('svg-icon -smm-plus', 'adv-icon_' + (key + 2))
                         p.smm-plus__item-name= item
-            button(data-target="consult").smm-plus__consult Получи консультацию 
+            button(data-target="consult").btn-gradient.-long Получи консультацию 
                span.-hidden бесплатно
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-smm-plus-head
          object(type="image/svg+xml" data="assets/img/ov-or.svg").bg-circle.-smm-plus-left
@@ -207,8 +207,8 @@ block content
                                  .our-work__step-tech-item= i
          object(type="image/svg+xml" data="assets/img/ov-ed.svg").bg-circle.-smm-work
    .service-packages
-      h2.title.-bg пакеты услуг
       .container-rel
+         h2.title.-bg пакеты услуг
          .service-packages__list
             .service-packages__list-wrap
                -
@@ -226,7 +226,7 @@ block content
                         list: ['Аудит аккаунта', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
                      }
                   ]
-               each item in services
+               each item, key in services
                   .pillar
                      .pillar__head
                         p.pillar__name= item.title
@@ -235,38 +235,47 @@ block content
                               li.pillar__item= item2
                      .pillar__foot
                         p.pillar__price= item.price
-                        button.pillar__btn Хочу этот пакет
-      //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
+                        - if (key == 1)
+                           button.btn-gradient.-dark Хочу этот пакет
+                        - else
+                           button.btn-gradient.-blue Хочу этот пакет
+         //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-serv-head
+         object(type="image/svg+xml" data="assets/img/smm/circle-fade.png").bg-circle.-smm-serv-foot
    .targeting-ads
-      h2.title.-bg настройка таргетированной рекламы
-      .container-rel
-         .targeting-ads__list
-            .targeting-ads__list-wrap
-               -
-                  var adds = [
-                     {
-                        title: 'старт', target: 'охват', price: '5.000',
-                        list: ['Запуск 3-4 промо-постов (для охвата своих подписчиков)', 'Таргетирование по возрасту и географическому положению', 'Отслеживание результатов рекламы', 'Отслеживание взаимодействия пользователей с объявлением, коммуникация']
-                     },
-                     {
-                        title: 'БИЗНЕС', target: 'лидогенерация', price: '13.000',
-                        list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Проработка демографиии, интересов, географического положения аудитории для точечного таргетирования', 'Разработка и согласование креативов', 'Создание лид–формы', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок']
-                     },
-                     {
-                        title: 'СТАНДАРТ', target: 'вовлеченность', price: '8.000',
-                        list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Таргетирование по возрасту и географическому положению', 'Разработка креативов', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок', 'Отслеживание взаимодействия пользователей с объявлениями, коммуникация']
-                     }
-                  ]
-               each item in adds
-                  .pillar
-                     .pillar__head
-                        p.pillar__name= item.title
-                        span.pillar__target= 'Цель: '+item.target
-                        ul.pillar__list
-                           each item2 in item.list
-                              li.pillar__item= item2
-                     .pillar__foot
-                        p.pillar__price= item.price
-                           span  + бюджет
-                        button.pillar__btn Хочу этот пакет
-      //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-what
+      .container-rel.-big
+         .container-rel
+            h2.title.-bg настройка таргетированной рекламы
+            .targeting-ads__list
+               .targeting-ads__list-wrap
+                  -
+                     var adds = [
+                        {
+                           title: 'старт', target: 'охват', price: '5.000',
+                           list: ['Запуск 3-4 промо-постов (для охвата своих подписчиков)', 'Таргетирование по возрасту и географическому положению', 'Отслеживание результатов рекламы', 'Отслеживание взаимодействия пользователей с объявлением, коммуникация']
+                        },
+                        {
+                           title: 'БИЗНЕС', target: 'лидогенерация', price: '13.000',
+                           list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Проработка демографиии, интересов, географического положения аудитории для точечного таргетирования', 'Разработка и согласование креативов', 'Создание лид–формы', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок']
+                        },
+                        {
+                           title: 'СТАНДАРТ', target: 'вовлеченность', price: '8.000',
+                           list: ['Площадки для размещения объявления: общая лента Instagram/Stories', 'Запуск кампании через рекламный кабинет Facebook', 'Таргетирование по возрасту и географическому положению', 'Разработка креативов', 'Написание цепляющего текста', 'Тестирование объявлений', 'Отслеживание результатов рекламы, внесение корректировок', 'Отслеживание взаимодействия пользователей с объявлениями, коммуникация']
+                        }
+                     ]
+                  each item, key in adds
+                     .pillar
+                        .pillar__head
+                           p.pillar__name= item.title
+                           span.pillar__target= 'Цель: '+item.target
+                           ul.pillar__list
+                              each item2 in item.list
+                                 li.pillar__item= item2
+                        .pillar__foot
+                           p.pillar__price= item.price
+                              span  + бюджет
+                           - if (key == 1)
+                              button.btn-gradient.-dark Хочу этот пакет
+                           - else
+                              button.btn-gradient.-blue Хочу этот пакет
+         //-    object(type="image/svg+xml" data="assets/img/smm/circle-fade.png").bg-circle.-smm-ads-head
+         object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-ads-foot

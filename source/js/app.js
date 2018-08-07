@@ -6,6 +6,20 @@ window.onload = () => {
    phoneMask($.querySelector('.question-form input[name=phone]'));
    altMenu();
    modalFunction();
+   if ($.querySelector('.service-packages__list')) swiper({
+      minWidth: '540px',
+      maxWidth: '1199px',
+      elem: {
+         selector: '.service-packages__list',
+         settings: {
+            wrapperClass: "service-packages__list-wrap",
+            slideClass: "pillar",
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            initialSlide: 3
+         }
+      }
+   });
    if ($.querySelector('.targeting-ads__list')) swiper({
       minWidth: '540px',
       maxWidth: '1199px',
@@ -19,17 +33,31 @@ window.onload = () => {
          }
       }
    });
-   if ($.querySelector('.service-packages__list')) swiper({
-      minWidth: '540px',
-      maxWidth: '1199px',
+   if ($.querySelector('.clients__list')) swiper({
+      maxWidth: '767px',
       elem: {
-         selector: '.service-packages__list',
+         selector: '.clients__list',
          settings: {
-            wrapperClass: "service-packages__list-wrap",
-            slideClass: "pillar",
+            wrapperClass: "clients__list-wrap",
+            slideClass: "clients__item",
             slidesPerView: 'auto',
-            centeredSlides: true,
-            initialSlide: 3
+            slidesPerColumn: 2,
+            breakpoints: {
+               511: {
+                  slidesPerColumn: 1
+               }
+            }
+         }
+      }
+   });
+   if ($.querySelector('.new-articles__list')) swiper({
+      maxWidth: '509px',
+      elem: {
+         selector: '.new-articles__list',
+         settings: {
+            wrapperClass: "new-articles__list-wrap",
+            slideClass: "new-articles__item",
+            slidesPerView: 'auto'
          }
       }
    });

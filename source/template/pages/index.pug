@@ -144,8 +144,8 @@ block content
       .container-rel
          h2.title.-bg наши клиенты
          - var i = 1;
-         .clients__list-wrap
-            .clients__list
+         .clients__list
+            .clients__list-wrap
                while i < 16
                   a(href="").clients__item
                      img.clients__item-image(src="assets/img/clients/"+ i +"-hover.png", alt="")
@@ -161,8 +161,8 @@ block content
                   {name: ['Как выбрать', 'название стартапа'], author: 'Вадим Постол'},
                   {name: ['Что нужно знать при заказе?', 'SEO в 2017'], author: 'Юрий Горяев'}
                ]
-            .new-articles__list-wrap
-               .new-articles__list
+            .new-articles__list
+               .new-articles__list-wrap
                   each item, key in articles
                      .new-articles__item
                         a(href="").new-articles__item-link
@@ -176,6 +176,5 @@ block content
                                  else
                                     = i
                            p.new-articles__item-author= item.author
-            .direct-link__wrap
-               a(href="").direct-link Перейти в блог
+            a(href="").direct-link Перейти в блог
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-articles

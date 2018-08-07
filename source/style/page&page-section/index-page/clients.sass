@@ -2,30 +2,31 @@
    background-color: $white
    position: relative
    &__list
-      background-color: $main-bg-grey
-      display: flex
-      flex-wrap: wrap
-      position: relative
-      bottom: 1px
-      right: 1px
-      @media all and (min-width: 512px) and (max-width: 767px)
-         max-height: calc(256px*2)
-         flex-direction: column
-      @media all and (max-width: 511px)
-         flex-wrap: nowrap
+      margin: 0 auto
+      max-width: 100%
+      min-width: 100%
+      width: min-content
+      overflow: hidden
+      @media all and (max-width: 1280px)
+         min-width: calc(256px*4)
+      @include w1024-
+         min-width: calc(256px*3)
+      @include w768-
+         min-width: auto
+         width: 100%
       &-wrap
-         margin: 0 auto
-         max-width: 100%
-         min-width: 100%
-         width: min-content
-         overflow: hidden
-         @media all and (max-width: 1280px)
-            min-width: calc(256px*4)
-         @include w1024-
-            min-width: calc(256px*3)
-         @include w768-
-            min-width: auto
-            width: 100%
+         background-color: $main-bg-grey
+         display: flex
+         flex-wrap: wrap
+         position: relative
+         bottom: 1px
+         right: 1px
+         @media all and (min-width: 512px) and (max-width: 767px)
+            max-height: calc(256px*2)
+            flex-direction: column
+         @media all and (max-width: 511px)
+            flex-wrap: nowrap
+
    &__item
       min-width: 256px
       max-width: 256px

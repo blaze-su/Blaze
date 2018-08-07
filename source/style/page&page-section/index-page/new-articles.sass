@@ -1,10 +1,10 @@
 .new-articles
 	&__list
-		display: flex
+		@include w1200-
+			max-width: 850px
+			margin: 0 auto
 		&-wrap
-			@include w1200-
-				max-width: 850px
-				margin: 0 auto
+			display: flex
 	&__item
 		max-width: 420px
 		min-width: 245px

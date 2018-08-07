@@ -76,19 +76,21 @@ mixin footer(circleMode)
 			if (circleMode)
 				object(type="image/svg+xml" data="assets/img/ov-lg.svg" class= '-footer'+circleMode).bg-circle
 
+mixin titleStruct(page)
+	if (page === 'index')
+		h1 сайты, которые работают
+	if (page === 'smm')
+		h1 SMM
+			span  – эффектно
+				br
+				| и эффективно
+
 mixin first-screen(obj)
 	.first-screen(class="-"+page+" "+obj.mode)
 		+header()
 		.first-screen__content.container
 			if (obj.title)
-				h1
-					each item, key in obj.title
-						if (key == 0)
-							= item
-						else
-							br
-							= item
-
+				+titleStruct(page)
 			if (obj.subtitle)
 				h3= obj.subtitle
 			if (obj.btn)

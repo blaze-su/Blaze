@@ -4,6 +4,8 @@
    max-height: 1080px
    position: relative
    overflow: hidden
+   display: flex
+   flex-direction: column
    &.-index
       background:
          color: $title-grey
@@ -16,6 +18,15 @@
          background:
             image: url('../img/first-screen-bg/1st_bg_image_sm.jpg')
             position-x: 47%
+   &.-smm
+      & > .first-screen__content
+         & > h1
+            & > span
+               @include w540-
+                  display: block
+                  margin-top: 10px
+                  font-size: 30px
+                  +Roboto(light)
    &-slider
       position: absolute
       top: 0
@@ -83,14 +94,12 @@
    & > .header
       background-color: transparent
    &__content
-      margin-top: 30vh
+      margin: auto
       position: relative
       left: -8px
       padding: 0 40px
       @include w1600
          left: 0
-      @include w540-
-         margin-top: 23vw
       & > h1
          text-transform: uppercase
          line-height: 1.3
