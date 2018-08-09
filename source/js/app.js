@@ -1,14 +1,15 @@
 ;
 var $ = document;
 
-window.onload = () => {
+window.addEventListener('load', () => {
+   adaptive();
    openlist($.querySelector('.header-contacts__select-check'), $.querySelector('.header-contacts__select-list'));
    phoneMask($.querySelector('.question-form input[name=phone]'));
    altMenu();
    modalFunction();
    if ($.querySelector('.service-packages__list')) swiper({
       minWidth: '540px',
-      maxWidth: '1199px',
+      maxWidth: '1279',
       elem: {
          selector: '.service-packages__list',
          settings: {
@@ -22,7 +23,7 @@ window.onload = () => {
    });
    if ($.querySelector('.targeting-ads__list')) swiper({
       minWidth: '540px',
-      maxWidth: '1199px',
+      maxWidth: '1279',
       elem: {
          selector: '.targeting-ads__list',
          settings: {
@@ -60,6 +61,19 @@ window.onload = () => {
             slidesPerView: 'auto'
          }
       }
+   });
+});
+
+var adaptive = () => {
+   if (window.outerWidth <= 1920) return false;
+   else $.body.style.zoom = `calc(${window.outerWidth / 1920})`;
+
+   window.addEventListener('resize', () => {
+      if (window.outerWidth <= 1920) {
+         $.body.style.zoom = '1';
+         return false;
+      }
+      else $.body.style.zoom = `calc(${window.outerWidth / 1920})`;
    });
 };
 

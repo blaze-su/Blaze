@@ -115,132 +115,134 @@ block content
          object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-smm-plus-head
          object(type="image/svg+xml" data="assets/img/ov-or.svg").bg-circle.-smm-plus-left
    .our-work
-      .container-rel
-         h2.title.-bg как мы работаем
-         -
-            var steps = [
-               {
-                  name: 'аналитика и проектирование',
-                  team: 'Проектировщик, Дизайнер, Аналитик',
-                  process: [
-                     {
-                        title: 'Вход',
-                        list: ['Концепция','Анализ целевой аудитории','Анализ конкурентов']
-                     },
-                     {
-                        title: 'Процесс',
-                        list: ['Сценарии поведения пользователей','Разработка структуры','Юзабилити тестирование']
-                     },
-                     {
-                        title: 'Результат',
-                        list: ['Интерактивный прототип']
-                     }
-                  ],
-                  tech: 'Adobe Photoshop, Sketch, Invision App',
-                  techLinks: ['Ps', 'Sk', 'In']
-               },
-               {
-                  name: 'визуальный дизайн',
-                  team: 'Дизайнер, Проектировщик, Аналитик',
-                  process: [
-                     {
-                        title: 'Вход',
-                        list: ['Концепция','Интерактивный прототип','Материалы клиента']
-                     },
-                     {
-                        title: 'Процесс',
-                        list: ['Концепция дизайна','Разработка дизайна']
-                     },
-                     {
-                        title: 'Результат',
-                        list: ['Макеты экранов','Интерактивный прототип','Кейс проекта']
-                     }
-                  ],
-                  tech: 'Adobe Photoshop, Adobe Illustrator, After Effects, Sketch, Invision App',
-                  techLinks: ['Ps','Ai','Ae','Sk','In']
-               },
-               {
-                  name: 'разработка и поддержка',
-                  team: 'Дизайнер, Frontend−разработчик, Программист, Тестировщик',
-                  process: [
-                     {
-                        title: 'Вход',
-                        list: ['Макеты экранов','Интерактивный прототип']
-                     },
-                     {
-                        title: 'Процесс',
-                        list: ['Техническое проектирование','Адаптивная верстка','Разработка модулей', 'Настройка CMS', 'Тестирование и отладка']
-                     },
-                     {
-                        title: 'Результат',
-                        list: ['Веб−сайт','API','Административная панель']
-                     }
-                  ],
-                  tech: 'VS Code, Gulp, Git, Zepplin',
-                  techLinks: ['Vs', 'Gu', 'Gt', 'Zp']
-               },
-            ]
+      .container-rel.-big
+         .container-rel
+            h2.title.-bg как мы работаем
+            -
+               var steps = [
+                  {
+                     name: 'аналитика и проектирование',
+                     team: 'Проектировщик, Дизайнер, Аналитик',
+                     process: [
+                        {
+                           title: 'Вход',
+                           list: ['Концепция','Анализ целевой аудитории','Анализ конкурентов']
+                        },
+                        {
+                           title: 'Процесс',
+                           list: ['Сценарии поведения пользователей','Разработка структуры','Юзабилити тестирование']
+                        },
+                        {
+                           title: 'Результат',
+                           list: ['Интерактивный прототип']
+                        }
+                     ],
+                     tech: 'Adobe Photoshop, Sketch, Invision App',
+                     techLinks: ['Ps', 'Sk', 'In']
+                  },
+                  {
+                     name: 'визуальный дизайн',
+                     team: 'Дизайнер, Проектировщик, Аналитик',
+                     process: [
+                        {
+                           title: 'Вход',
+                           list: ['Концепция','Интерактивный прототип','Материалы клиента']
+                        },
+                        {
+                           title: 'Процесс',
+                           list: ['Концепция дизайна','Разработка дизайна']
+                        },
+                        {
+                           title: 'Результат',
+                           list: ['Макеты экранов','Интерактивный прототип','Кейс проекта']
+                        }
+                     ],
+                     tech: 'Adobe Photoshop, Adobe Illustrator, After Effects, Sketch, Invision App',
+                     techLinks: ['Ps','Ai','Ae','Sk','In']
+                  },
+                  {
+                     name: 'разработка и поддержка',
+                     team: 'Дизайнер, Frontend−разработчик, Программист, Тестировщик',
+                     process: [
+                        {
+                           title: 'Вход',
+                           list: ['Макеты экранов','Интерактивный прототип']
+                        },
+                        {
+                           title: 'Процесс',
+                           list: ['Техническое проектирование','Адаптивная верстка','Разработка модулей', 'Настройка CMS', 'Тестирование и отладка']
+                        },
+                        {
+                           title: 'Результат',
+                           list: ['Веб−сайт','API','Административная панель']
+                        }
+                     ],
+                     tech: 'VS Code, Gulp, Git, Zepplin',
+                     techLinks: ['Vs', 'Gu', 'Gt', 'Zp']
+                  },
+               ]
 
-         .our-work__step-list
-            each item, key in steps
-               .our-work__step
-                  .our-work__step-wrap
-                     .our-work__step-title-box
-                        .our-work__step-count= key+1
-                        p.our-work__step-title= item.name
-                     .our-work__step-content
-                        .our-work__step-team-wrap
-                           span.our-work__step-team-mark Участники
-                           p.our-work__step-team= item.team
-                        .our-work__step-process-wrap
-                           each i in item.process
-                              .our-work__step-process
-                                 p.our-work__step-process-title= i.title
-                                 ul.our-work__step-process-list
-                                    each j in i.list
-                                       li.our-work__step-process-item= j
-                        .our-work__step-tech-wrap
-                           p.our-work__step-tech-title Технологии
-                           p.our-work__step-tech= item.tech
-                           .our-work__step-tech-list
-                              each i in item.techLinks
-                                 .our-work__step-tech-item= i
-         object(type="image/svg+xml" data="assets/img/ov-ed.svg").bg-circle.-smm-work
+            .our-work__step-list
+               each item, key in steps
+                  .our-work__step
+                     .our-work__step-wrap
+                        .our-work__step-title-box
+                           .our-work__step-count= key+1
+                           p.our-work__step-title= item.name
+                        .our-work__step-content
+                           .our-work__step-team-wrap
+                              span.our-work__step-team-mark Участники
+                              p.our-work__step-team= item.team
+                           .our-work__step-process-wrap
+                              each i in item.process
+                                 .our-work__step-process
+                                    p.our-work__step-process-title= i.title
+                                    ul.our-work__step-process-list
+                                       each j in i.list
+                                          li.our-work__step-process-item= j
+                           .our-work__step-tech-wrap
+                              p.our-work__step-tech-title Технологии
+                              p.our-work__step-tech= item.tech
+                              .our-work__step-tech-list
+                                 each i in item.techLinks
+                                    .our-work__step-tech-item= i
+            object(type="image/svg+xml" data="assets/img/ov-ed.svg").bg-circle.-smm-work-head
+         object(type="image/svg+xml" data="assets/img/ov-w.svg").bg-circle.-smm-work-foot
    .service-packages
-      .container-rel
-         h2.title.-bg пакеты услуг
-         .service-packages__list
-            .service-packages__list-wrap
-               -
-                  var services = [
-                     {
-                        title: 'старт', price: '10.000',
-                        list: ['Аудит аккаунта', 'Генерирование контента', 'Оформление страницы', 'Коммуникация с аудиторией']
-                     },
-                     {
-                        title: 'БИЗНЕС', price: '25.000',
-                        list: ['Анализ ситуации', 'Выявление проблем позиционирования бренда', 'Формирование контент–стратегии и характера коммуникации с аудиторией', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Работа с лидерами мнений', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
-                     },
-                     {
-                        title: 'СТАНДАРТ', price: '15.000',
-                        list: ['Аудит аккаунта', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
-                     }
-                  ]
-               each item, key in services
-                  .pillar
-                     .pillar__head
-                        p.pillar__name= item.title
-                        ul.pillar__list
-                           each item2 in item.list
-                              li.pillar__item= item2
-                     .pillar__foot
-                        p.pillar__price= item.price
-                        - if (key == 1)
-                           button.btn-gradient.-dark Хочу этот пакет
-                        - else
-                           button.btn-gradient.-blue Хочу этот пакет
-         //- object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-serv-head
-         object(type="image/svg+xml" data="assets/img/smm/circle-fade.png").bg-circle.-smm-serv-foot
+      .container-rel.-big
+         .container-rel
+            h2.title.-bg пакеты услуг
+            .service-packages__list
+               .service-packages__list-wrap
+                  -
+                     var services = [
+                        {
+                           title: 'старт', price: '10.000',
+                           list: ['Аудит аккаунта', 'Генерирование контента', 'Оформление страницы', 'Коммуникация с аудиторией']
+                        },
+                        {
+                           title: 'БИЗНЕС', price: '25.000',
+                           list: ['Анализ ситуации', 'Выявление проблем позиционирования бренда', 'Формирование контент–стратегии и характера коммуникации с аудиторией', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Работа с лидерами мнений', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
+                        },
+                        {
+                           title: 'СТАНДАРТ', price: '15.000',
+                           list: ['Аудит аккаунта', 'Разработка контент–плана, полное ведение профиля', 'Генерирование контента', 'Проведение фото и видесъемок', 'Модерация сообщества', 'Оформление страницы', 'Коммуникация с аудиторией', 'Рост числа подписчиков']
+                        }
+                     ]
+                  each item, key in services
+                     .pillar
+                        .pillar__head
+                           p.pillar__name= item.title
+                           ul.pillar__list
+                              each item2 in item.list
+                                 li.pillar__item= item2
+                        .pillar__foot
+                           p.pillar__price= item.price
+                           - if (key == 1)
+                              button.btn-gradient.-dark Хочу этот пакет
+                           - else
+                              button.btn-gradient.-blue Хочу этот пакет
+         object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-serv-foot
    .targeting-ads
       .container-rel.-big
          .container-rel
@@ -277,5 +279,4 @@ block content
                               button.btn-gradient.-dark Хочу этот пакет
                            - else
                               button.btn-gradient.-blue Хочу этот пакет
-         //-    object(type="image/svg+xml" data="assets/img/smm/circle-fade.png").bg-circle.-smm-ads-head
          object(type="image/svg+xml" data="assets/img/ov-lg.svg").bg-circle.-smm-ads-foot

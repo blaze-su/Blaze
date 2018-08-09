@@ -4,8 +4,38 @@
       image: url('../img/smm/8th-screen_4.jpg')
       repeat: no-repeat
       size: cover
-   & > h2.title.-bg
-      font-size: 32px
+   &:before
+      content: ''
+      display: block
+      width: 1742px
+      height: 1742px
+      position: absolute
+      top: 0
+      right: -2px
+      transform: translate(-39%,-33%)
+      z-index: 0
+      background:
+         image: url('../img/ov-lg.svg')
+         repeat: no-repeat
+   &:after
+      content: ''
+      display: block
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+      background:
+         image: url('../img/smm/shape.png')
+         repeat: no-repeat
+         size: cover
+   & > .container-rel.-big
+      & > .container-rel
+         // z-index: 2
+   // & h2.title.-bg
+   //    @include w1024-
+   //       font-size: 32px
    &__list
       &-wrap
          display: flex

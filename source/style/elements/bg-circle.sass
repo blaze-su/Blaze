@@ -2,22 +2,25 @@
    position: absolute
    z-index: -1
    &.-services
-      top: 85px
-      left: 490px
+      bottom: -8px
+      right: 7px
+      transform: translate(55%, 55%)
    &.-service
-      top: -975px
-      left: 490px
+      top: -18px
+      right: 7px
+      transform: translate(55%, -55%)
    &.-work
       bottom: -35px
-      left: 490px
-      transform: translateY(75%)
+      right: 6px
+      transform: translate(55%, 75%)
    &.-question
-      top: -500px
-      left: 490px
+      top: -13px
+      right: 6px
+      transform: translate(55%, -28%)
    &.-clients
-      top: -120px
-      left: 490px
-      transform: translateY(-50%)
+      top: -119px
+      right: 6px
+      transform: translate(55%, -50%)
    &.-articles
       bottom: 40px
       left: -25px
@@ -36,6 +39,10 @@
          bottom: -200px
          left: 80px
          transform: translate(-75%, 50%)
+         @include w1366-
+            bottom: 0
+            left: 0
+            transform: translate(-52%, 57%)
       &-inst
          bottom: 8px
          left: 45px
@@ -49,6 +56,10 @@
             bottom: -27px
             right: 5px
             transform: translate(-20%,80%)
+            @media all and (max-width: 1280px)
+               bottom: -13px
+               right: 0
+               transform: translate(14%,85%)
       &-plus
          &-head
             top: -42px
@@ -58,25 +69,25 @@
             top: 15px
             right: 5px
             transform: translate(-20%, -25%)
+            @media all and (max-width: 1280px)
+               top: 0
+               right: 0
+               transform: translate(14%,-20%)
       &-work
-         top: 0
-         right: 5px
-         transform: translate(-20%, -65%)
-      &-serv
          &-head
+            top: 0
+            right: 5px
+            transform: translate(-20%, -65%)
          &-foot
-            width: 1742px
-            height: 1742px
+            bottom: 20px
+            right: 4px
+            transform: translate(37%,75%)
+      &-serv
+         &-foot
             bottom: 40px
-            left: -34px
-            transform: translate(-45%, 75%)
+            right: 0
+            transform: translate(-39%, 75%)
       &-ads
-         &-head
-            width: 1742px
-            height: 1742px
-            top: -54px
-            left: -34px
-            transform: translate(-45%, -30%)
          &-foot
             bottom: 39px
             right: -20px
