@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
    modalFunction();
    if ($.querySelector('.service-packages__list')) swiper({
       minWidth: '540px',
-      maxWidth: '1279',
+      maxWidth: '1279px',
       elem: {
          selector: '.service-packages__list',
          settings: {
@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
    });
    if ($.querySelector('.targeting-ads__list')) swiper({
       minWidth: '540px',
-      maxWidth: '1279',
+      maxWidth: '1279px',
       elem: {
          selector: '.targeting-ads__list',
          settings: {
